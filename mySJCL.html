@@ -118,10 +118,10 @@ function doDecrypt(password, ciphertext) {
         
         
         // Codes here
-        if (appInventorInputs[0] == "Encrypt") {
+        if (appInventorInputs[0] === "Encrypt") {
             result = doEncrypt(appInventorInputs[1],appInventorInputs[2]);
             
-        } else if (appInventorInputs[0] == "Decrypt") {
+        } else if (appInventorInputs[0] === "Decrypt") {
             result = doDecrypt(appInventorInputs[1],appInventorInputs[2]);
         } else {
             result = "Error command: " + appInventorInputs[0];
