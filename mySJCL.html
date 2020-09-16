@@ -112,11 +112,16 @@ function doDecrypt(password, ciphertext) {
         var result ="Incorrect command";
         var appInventorInputs = window.AppInventor.getWebViewString().split(",");
         
+        document.getElementById("func").innerHTML = "-" + appInventorInputs[0] + "-";
+        document.getElementById("pwd").innerHTML =  "-" + appInventorInputs[1] + "-";
+        document.getElementById("data").innerHTML = "-" + appInventorInputs[2] + "-";
+        
+        
         // Codes here
-        if (appInventorInputs[0]=="Encrypt") {
+        if (appInventorInputs[0] == "Encrypt") {
             result = doEncrypt(appInventorInputs[1],appInventorInputs[2]);
             
-        } else if (appInventorInputs[0]=="Decrypt") {
+        } else if (appInventorInputs[0] == "Decrypt") {
             result = doDecrypt(appInventorInputs[1],appInventorInputs[2]);
         } else {
             result = "Error command: " + appInventorInputs[0];
@@ -124,8 +129,12 @@ function doDecrypt(password, ciphertext) {
         
         // result sent back to App Inventor
         window.AppInventor.setWebViewString( result );
+        document.getElementById("res").innerHTML = "-" + result + "-";
     }
 </script>
-
+    <p id="func"></p>
+    <p id="pwd"></p>
+    <p id="data"></p>
+    <p id="res"></p>
 </body>
 </html>
