@@ -107,15 +107,19 @@ function doDecrypt(password, ciphertext) {
     /////////////////
     //// Receiver
     ////////////////
-    var result ="Incorrect command";
-    var appInventorInputs = window.AppInventor.getWebViewString().split(",");
+    
     function mySJCL() {
+        var result ="Incorrect command";
+        var appInventorInputs = window.AppInventor.getWebViewString().split(",");
+        
         // Codes here
         if (appInventorInputs[0]=="Encrypt") {
             result = doEncrypt(appInventorInputs[1],appInventorInputs[2]);
             
         } else if (appInventorInputs[0]=="Decrypt") {
             result = doDecrypt(appInventorInputs[1],appInventorInputs[2]);
+        } else {
+            result = "Error command: " + appInventorInputs[0];
         }
         
         // result sent back to App Inventor
