@@ -103,36 +103,7 @@ function doDecrypt(password, ciphertext) {
     return outstring;
     }
 }
-
-
-function doGet(e) {
-  return ManageSheet(e);
-}
-
-function doPost(e) {
-  return ManageSheet(e);
-}
-
-
-function ManageSheet(e) {
-
-  //Encrypt
-  if ( e.parameter.func == "Encrypt") {
-
-    var outString = doEncrypt(e.parameter.pwd,e.parameter.data);
-    
-    return ContentService.createTextOutput(outString).setMimeType(ContentService.MimeType.TEXT);
-  }
-
-   //Decrypt
-   else   if ( e.parameter.func == "Decrypt") {
    
-    var outString = doDecrypt(e.parameter.pwd,e.parameter.data);
-    
-    return ContentService.createTextOutput(outString).setMimeType(ContentService.MimeType.TEXT);
-  }
-}
-    
     /////////////////
     //// Receiver
     ////////////////
