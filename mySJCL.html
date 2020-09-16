@@ -116,12 +116,12 @@ function doDecrypt(password, ciphertext) {
         document.getElementById("pwd").innerHTML =  "-" + appInventorInputs[1] + "-";
         document.getElementById("data").innerHTML = "-" + appInventorInputs[2] + "-";
         
-        
+        var command = appInventorInputs[0];
         // Codes here
-        if (appInventorInputs[0] === "Encrypt") {
+        if (command == "Encrypt") {
             result = doEncrypt(appInventorInputs[1],appInventorInputs[2]);
             
-        } else if (appInventorInputs[0] === "Decrypt") {
+        } else if (command == "Decrypt") {
             result = doDecrypt(appInventorInputs[1],appInventorInputs[2]);
         } else {
             result = "Error command: " + appInventorInputs[0];
@@ -136,5 +136,6 @@ function doDecrypt(password, ciphertext) {
     <p id="pwd"></p>
     <p id="data"></p>
     <p id="res"></p>
+    
 </body>
 </html>
